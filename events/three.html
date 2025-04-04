@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem, ipsum dolor fuccc.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <p class="event"></p>
+</body>
+<script>
+    let intervalId = null; // Store interval ID globally
+
+    const sayDate = function(){
+        document.querySelector('p').innerHTML = "Shagun";
+        console.log("Shagun", Date.now());
+    }
+
+    document.querySelector('#start').addEventListener('click', function(){
+        if (!intervalId) { // Prevent multiple intervals from being created
+            intervalId = setInterval(sayDate, 1000);
+            
+            console.log("Started");
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(intervalId);
+        intervalId = null; // Reset intervalId so it can be started again
+        console.log("Stopped");
+    });
+</script>
+</html>

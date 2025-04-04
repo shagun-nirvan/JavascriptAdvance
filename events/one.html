@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li><img width="200px" id="photoshop"
+                src="https://images.pexels.com/photos/31346411/pexels-photo-31346411/free-photo-of-mountain-goat-standing-on-rocky-cliff-in-alps.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                alt=""></li>
+        <li><img width="200px" id="japan"
+                src="https://images.pexels.com/photos/31100425/pexels-photo-31100425/free-photo-of-vibrant-daruma-dolls-at-japanese-temple-display.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                alt=""></li>
+        <li><img width="200px" id="river"
+                src="https://images.pexels.com/photos/31312031/pexels-photo-31312031/free-photo-of-colorful-rainbow-lorikeet-on-a-bare-branch.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                alt=""></li>
+        <li><img width="200px" id="owl"
+                src="https://images.pexels.com/photos/31302312/pexels-photo-31302312/free-photo-of-pedestrians-passing-vibrant-shibuya-street-art.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                alt=""></li>
+        <li><img width="200px" id="prayer"
+                src="https://images.pexels.com/photos/31181029/pexels-photo-31181029/free-photo-of-majestic-elk-in-yellowstone-national-park-landscape.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>   
+    </ul>
+
+</body>
+ <!-- <script> 
+    // document.getElementById('owl').onclick= function(){
+    //     alert('owl clicked')
+    // }
+
+
+
+
+    // events help in recognising and get access of the following----)))
+    //type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY,
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside ul');
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     alert('owl clicked');
+    //     e.stopPropagation()
+    // }, false)
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     console.log('google clicked');
+        
+    // },false)
+                  
+    
+    
+    
+    //false deafault hota hai jo bottom up approach use karta hai means pehle inner element ko activate karega(use bubbling up i.e. lower to upper)
+                //true is top down(capturing)
+    
+ </script> -->
+
+ <script>
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.parentNode.removeChild(removeIt)
+
+        
+    })
+ </script>
+</html> 
